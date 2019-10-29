@@ -1,0 +1,62 @@
+<script type="text/javascript">
+    // 防止用户重复下单
+    $(function(){
+        pushHistory();
+        window.addEventListener("popstate", function(e) {
+            // alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能
+            window.location.href='/index.php?route=checkout/checkout';
+        }, false);
+        function pushHistory() {
+            var state = {
+                title: "title",
+                url: "/index.php?route=checkout/checkout"
+            };
+            window.history.pushState(state, "title", "/index.php?route=checkout/checkout");
+        }
+    });
+</script>
+<div class="alert alert-warning" id="warning" style="display:none;"></div>
+<div class="buttons">
+    <div class="pull-right">
+		<input type="button" onclick="confirmSubmit();" id="btn-achwechat-confirm-pay" class="btn btn-primary" value="{{button_confirm}}">
+	</div>
+</div>
+
+<script type="text/javascript">
+	function confirmSubmit() {
+		//$('#warning').hide();
+		$.ajax({
+			type: 'POST',
+			url: 'index.php?route=extension/payment/achwechat/send',
+			data: $('#achwechatdirect :input'),
+			dataType: 'json',
+				
+			beforeSend: function() {
+				$('#btn-achwechat-confirm-pay').attr('disabled', true);
+				
+				$('#achwechatdirect').before('<div class="wait"><img src="catalog/view/theme/default/achwechat/loading_1.gif" alt="" /> {{text_wait}}</div>');
+			},
+			complete: function() {
+				$('#btn-achwechat-confirm-pay').attr('disabled', false);
+				$('.wait').remove();
+			},			
+			success: function(json) {
+			    if (json['info']) {
+                    $('#warning').show().text(json['info']);
+                    return;
+				}
+				if (json['error']) {
+					$('#warning').show().text(json['error']);
+					return;
+				}
+
+				if (json['success']) {
+					 location = json['success'];
+				}
+				return;
+			},error:function(e){
+				$('#warning').show().text('Server internal error, please try again later.');
+			}	
+		});
+	}
+</script>

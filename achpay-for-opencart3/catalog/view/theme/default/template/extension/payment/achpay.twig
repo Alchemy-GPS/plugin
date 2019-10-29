@@ -1,0 +1,239 @@
+<script type="text/javascript">
+    // 防止用户重复下单
+    $(function(){
+        pushHistory();
+        window.addEventListener("popstate", function(e) {
+            // alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能
+            window.location.href='/index.php?route=checkout/checkout';
+        }, false);
+        function pushHistory() {
+            var state = {
+                title: "title",
+                url: "/index.php?route=checkout/checkout"
+            };
+            window.history.pushState(state, "title", "/index.php?route=checkout/checkout");
+        }
+    });
+</script>
+<style type="text/css">
+    .panel {
+        border-width: 0 0 1px 0;
+        border-style: solid;
+        border-color: #fff;
+        background: none;
+        box-shadow: none;
+    }
+    .panel:last-child {
+        border-bottom: none;
+    }
+
+    .panel-group > .panel:first-child .panel-heading {
+        border-radius: 4px 4px 0 0;
+    }
+
+    .panel-group .panel {
+        border-radius: 0;
+    }
+
+    .panel-group .panel + .panel {
+        margin-top: 0;
+    }
+
+    .panel-heading {
+        background-color: #009688;
+        border-radius: 0;
+        border: none;
+        color: #fff;
+        padding: 0;
+    }
+
+    .panel-title a {
+        display: block;
+        color: #fff;
+        padding: 15px;
+        position: relative;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .panel-body {
+        background: #fff;
+        padding: 5px;
+    }
+
+    .panel:last-child .panel-body {
+        border-radius: 0 0 4px 4px;
+    }
+
+    .panel:last-child .panel-heading {
+        border-radius: 0 0 4px 4px;
+        -webkit-transition: border-radius 0.3s linear 0.2s;
+        transition: border-radius 0.3s linear 0.2s;
+    }
+
+    .panel:last-child .panel-heading.active {
+        border-radius: 0;
+        -webkit-transition: border-radius linear 0s;
+        transition: border-radius linear 0s;
+    }
+    /* #bs-collapse icon scale option */
+
+    .panel-heading a:before {
+        position: absolute;
+        font-family: 'Material Icons';
+        right: 5px;
+        top: 10px;
+        font-size: 24px;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    .panel-heading.active a:before {
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    #bs-collapse .panel-heading a:after {
+        font-size: 24px;
+        position: absolute;
+        font-family: 'Material Icons';
+        right: 5px;
+        top: 10px;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    #bs-collapse .panel-heading.active a:after {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    /* #accordion rotate icon option */
+
+    #accordion .panel-heading a:before {
+        font-size: 24px;
+        position: absolute;
+        font-family: 'Material Icons';
+        right: 5px;
+        top: 10px;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    #accordion .panel-heading.active a:before {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+</style>
+{#遍历加密币列表数据#}
+<div class="col-md-12 col-sm-12">
+    <h3>{{ msg }}</h3>
+    <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        {{ lightning }}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    {% for lightning in lightnings %}
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios"  value="{{ lightning.cryptocurrendyId }}">
+                                {{ lightning.cryptocurrencyName }}
+                            </label>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        {{ blockchain }}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    {% for blockchain in blockchains %}
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="{{ blockchain.cryptocurrendyId }}">
+                                {{ blockchain.cryptocurrencyName }}
+                            </label>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="alert alert-warning" id="warning" style="display:none;"></div>
+
+<div class="buttons">
+    <div class="pull-right">
+		<input type="button" onclick="confirmSubmit();" id="btn-achpay-confirm-pay" class="btn btn-primary" value="{{button_confirm}}">
+	</div>
+</div>
+<script type="text/javascript">
+    $("input[type='radio']").eq(0).attr('checked','checked');
+
+    function confirmSubmit() {
+        var cryptVal = $('input:radio:checked').val();
+        console.log($('#achpaydirect :input'));
+        //$('#warning').hide();
+        $.ajax({
+            type: 'POST',
+            url: 'index.php?route=extension/payment/achpay/send',
+            // data: $('#achpaydirect :input'),
+            data: {'type':cryptVal},
+            dataType: 'json',
+
+            beforeSend: function() {
+                $('#btn-achpay-confirm-pay').attr('disabled', true);
+
+                $('#achpaydirect').before('<div class="wait"><img src="catalog/view/theme/default/images/hpj/achpay.png" alt="" /> {{text_wait}}</div>');
+            },
+            complete: function() {
+                $('#btn-achpay-confirm-pay').attr('disabled', false);
+                $('.wait').remove();
+            },
+            success: function(json) {
+                if (json['info']) {
+                    $('#warning').show().text(json['info']);
+                    return;
+                }
+                if (json['error']) {
+                    $('#warning').show().text(json['error']);
+                    return;
+                }
+
+                if (json['success']) {
+                    location = json['success'];
+                }
+                return;
+            },error:function(e){
+                $('#warning').show().text('Server internal error, please try again later.');
+            }
+        });
+    }
+</script>
+{#获取选中的radio 获取value值#}
+{#将value值传到服务器 服务器传出url#}

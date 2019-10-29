@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3.3]]></item>
+	<item id="Time"><![CDATA[2019-03-05 14:26]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://discuz.lylsa.cn/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[积分金钱充值]]></item>
+			<item id="identifier"><![CDATA[achpay]]></item>
+			<item id="description"><![CDATA[支持微信、支付宝个人免签支付、加密币支付。]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[achpay/]]></item>
+			<item id="copyright"><![CDATA[]]></item>
+			<item id="version"><![CDATA[1.0.2]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[show]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[achpay]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[在线充值]]></item>
+					<item id="url"><![CDATA[home.php?mod=spacecp&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;ac=plugin&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;op=credit&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;id=sale_pay:home]]></item>
+					<item id="type"><![CDATA[1]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[admin]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[订单管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="3">
+					<item id="name"><![CDATA[home]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[在线充值]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[19]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[2]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="4">
+					<item id="name"><![CDATA[service]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[关于]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[3]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X3.3]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[全局开关]]></item>
+				<item id="description"><![CDATA[是否允许用户使用充值功能。如关闭，仅允许管理员在后台中调试]]></item>
+				<item id="variable"><![CDATA[ifopen]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[个人收款支付开关]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[popen]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[个人收款码商户ID]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[person]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[GCN001-001]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[个人收款秘钥]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[perkey]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[加密币收款开关]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[copen]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[加密币收款商户ID]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[cyrpt]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[6e476e074f6546ed8d3b5e8d0579a6b5]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[加密币秘钥]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[crykey]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[充值积分种类]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[type]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[单位积分价格（元） ...]]></item>
+				<item id="description"><![CDATA[每充值1积分需要支付多少元人民币
+允许小数，但是注意支付时最小单位为0.01元]]></item>
+				<item id="variable"><![CDATA[price]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0.001]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[最小充值积分数]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[min]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[最大充值积分数]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[max]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10000]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[12]]></item>
+				<item id="title"><![CDATA[充值额外赠送设置]]></item>
+				<item id="description"><![CDATA[当用户充值指定数量的积分时，额外赠送一定积分，每行一组
+例如下面设置表示，刚好充值100积分时，额外奖励5积分；刚好充值500积分时，额外奖励50积分
+充值积分和奖励积分用竖线（|）分隔
+100|5
+500|50
+1000|200
+...
+留空将不启用此功能 ...]]></item>
+				<item id="variable"><![CDATA[exlist]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[60|10
+300|30
+680|80
+1280|200
+3280|800
+6480|1800]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="12">
+				<item id="displayorder"><![CDATA[13]]></item>
+				<item id="title"><![CDATA[最新充值记录滚动条数 ...]]></item>
+				<item id="description"><![CDATA[是否显示最近XXX充值了XX积分
+用户名将被部分加密
+例如 admin 显示为 a***n
+设置为0或者负数则不显示]]></item>
+				<item id="variable"><![CDATA[shownum]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[5]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="13">
+				<item id="displayorder"><![CDATA[14]]></item>
+				<item id="title"><![CDATA[电脑板UI强调色]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[pccolor]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[#009d21]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="14">
+				<item id="displayorder"><![CDATA[15]]></item>
+				<item id="title"><![CDATA[手机版UI强调色]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[mcolor]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[#009d21]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="15">
+				<item id="displayorder"><![CDATA[16]]></item>
+				<item id="title"><![CDATA[充值页HTML公告]]></item>
+				<item id="description"><![CDATA[设置充值的说明、备注等。支持HTML代码，用<br>换行]]></item>
+				<item id="variable"><![CDATA[html]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<b>感谢您对本站的大力支持！</b><br>
+充值成功后积分到账可能有延迟，请您耐心等待。如充值过程中有任何问题，请联系本站客服：XXX]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="16">
+				<item id="displayorder"><![CDATA[17]]></item>
+				<item id="title"><![CDATA[订单超时作废时间(分钟) .. ...]]></item>
+				<item id="description"><![CDATA[在该时限内，系统将对未完成的订单进行跟踪，对延迟确认支付结果的订单进行追补
+超过该时间的订单将被标注为作废，系统不再判定支付结果]]></item>
+				<item id="variable"><![CDATA[passtime]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="17">
+				<item id="displayorder"><![CDATA[18]]></item>
+				<item id="title"><![CDATA[前台链接嵌入点]]></item>
+				<item id="description"><![CDATA[积分充值链接显示位置
+仅对电脑版生效，手机版或其他嵌入点请自行添加超链接：
+home.php?mod=spacecp&ac=plugin&op=credit&id=sale_pay:home]]></item>
+				<item id="variable"><![CDATA[indexpoint]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[3]]></item>
+				<item id="extra"><![CDATA[1=全局顶部左侧 global_cpnav_extra1
+2=全局顶部右侧 global_cpnav_extra2
+3=全局顶部用户信息 global_usernav_extra3
+4=全局底部链接边上 global_footerlink
+5=不显示（隐藏）]]></item>
+			</item>
+			<item id="18">
+				<item id="displayorder"><![CDATA[19]]></item>
+				<item id="title"><![CDATA[前台链接文字]]></item>
+				<item id="description"><![CDATA[支持HTML代码
+例如想显示红色的积分充值，并加粗，则输入：
+ <font color=red><b>积分充值</b></font>]]></item>
+				<item id="variable"><![CDATA[fronttext]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[<font color=red><b>在线充值</b></font>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="test"><![CDATA[测试语言包文件]]></item>
+				<item id="lang001"><![CDATA[Achpay充值]]></item>
+				<item id="lang074"><![CDATA[订单号：{order}<br />金额：{total_fee}元<br />充值：{ctitle}{cmoney}{cunit}。]]></item>
+				<item id="lang009"><![CDATA[支付失败]]></item>
+				<item id="lang003"><![CDATA[订单删除成功]]></item>
+				<item id="lang005"><![CDATA[订单状态设置成功]]></item>
+				<item id="lang004"><![CDATA[没有选中要操作的日志]]></item>
+				<item id="lang002"><![CDATA[没有选中要删除的日志]]></item>
+				<item id="lang006"><![CDATA[参数错误]]></item>
+				<item id="lang007"><![CDATA[价格设置错误]]></item>
+				<item id="lang008"><![CDATA[订单不存在]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="test"><![CDATA[测试语言包文件]]></item>
+				<item id="lang001"><![CDATA[提示：暂时没有可用的支付方式,请联系管理员.]]></item>
+				<item id="lang003"><![CDATA[订单删除成功]]></item>
+			</item>
+			<item id="installlang">
+				<item id="test"><![CDATA[chinese]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+	</item>
+</root>

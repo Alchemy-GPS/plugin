@@ -1,0 +1,1 @@
+<?php/** * 卸载插件  删除表 */if (!defined('IN_DISCUZ')) {	exit('Access Denied');}$sql = <<<EOFDROP TABLE IF EXISTS `cdb_achpay_log`;EOF;runquery($sql);$finish = true;

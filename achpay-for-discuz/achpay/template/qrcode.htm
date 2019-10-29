@@ -1,0 +1,76 @@
+<!--{template common/header}-->
+
+<!--{template home/spacecp_header}-->
+
+<!--{template home/spacecp_credit_header}-->
+
+<script type="text/javascript" src="source/plugin/achpay/image/jquery.min.js"></script>
+<script type="text/javascript" src="source/plugin/achpay/image/sockjs.js"></script>
+<script type="text/javascript" src="source/plugin/achpay/image/socketconnection.js"></script>
+<script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script type="text/javascript">jQuery.noConflict();</script>
+
+<div style="padding:20px 10px;border-bottom:1px solid #DDD;">
+    {$salepayconf[html]}
+</div>
+<div style="height: 300px;padding:20px 10px;border-bottom:1px solid #DDD;">
+
+    <h1>您需扫码支付<b style="color: red">{$res->cryptocurrencyQuantity}</b>个{$res->cryptocurrency}</h1>
+    <div id="qrcode" class="code" style="margin: 20px 0"></div>
+    <button class="pn pnc" id="checkPay"><span>检测是否支付成功</span></button>
+
+
+</div>
+
+<script type="text/javascript">
+jQuery(function($) {
+    var basename = '/'+'{$basename}';
+    var orderId = '{$res->orderId}';
+    $('#qrcode').qrcode({
+        render: "canvas", //也可以替换为table
+        width: 200,
+        height: 200,
+        text: "{$res->tradeAddress}"
+    });
+    $("#checkPay").click(function () {
+        orderStatusNotify(orderId,basename);
+    });
+
+    socket_connection('{$res->websocketConnectionUrl}');
+
+    function orderStatusNotify(order_id,basename){
+        $.ajax({
+            url:basename+'&act=checkpay',
+            type:'post',
+            data:{out_trade_no:order_id},
+            success:function(res){
+                if(res=='success'){
+                    window.location.href='/home.php?mod=spacecp&ac=credit&op=log'
+                }else{
+                    alert('如已支付，请耐心等待支付结果')
+                }
+            },
+            error:function(error){
+                console.log(error)
+            }
+            // alert('点击')
+        })
+    }
+
+
+
+})
+</script>
+
+
+</div>
+
+</div>
+
+<div class="appl">
+    <!--{template home/spacecp_footer}-->
+</div>
+
+</div>
+
+<!--{template common/footer}-->
